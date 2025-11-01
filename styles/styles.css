@@ -543,46 +543,174 @@
             }
         }
 
+        /* Menu mobile */
+        .menu-toggle {
+            display: none;
+            font-size: 1.5rem;
+            color: var(--secondary);
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 8px;
+            z-index: 100;
+        }
+
         @media (max-width:800px) {
+            .menu-toggle {
+                display: block;
+            }
+
             .nav-links {
-                display: none
+                position: fixed;
+                top: 0;
+                right: -100%;
+                height: 100vh;
+                width: 80%;
+                max-width: 400px;
+                background: white;
+                display: flex;
+                flex-direction: column;
+                padding: 80px 40px;
+                transition: right 0.3s ease;
+                box-shadow: -10px 0 30px rgba(0,0,0,0.1);
+            }
+
+            .nav-links.active {
+                right: 0;
+            }
+
+            .nav-links a {
+                font-size: 1.2rem;
+                padding: 16px;
+                border-bottom: 1px solid rgba(0,0,0,0.04);
             }
 
             .hero {
                 grid-template-columns: 1fr;
                 gap: 18px;
-                padding-top: 100px
+                padding-top: 100px;
+                text-align: center;
+            }
+
+            .hero-cta {
+                justify-content: center;
             }
 
             .hero-image {
-                height: 260px
+                height: 260px;
+            }
+
+            .about {
+                flex-direction: column-reverse;
+                text-align: center;
             }
 
             .gallery {
-                grid-template-columns: repeat(2, 1fr)
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .dish {
+                flex-direction: column;
+                text-align: center;
+                padding: 16px;
             }
 
             .dish img {
-                width: 95px;
-                height: 70px
+                width: 100%;
+                height: 200px;
+            }
+
+            .price {
+                margin: 16px auto 0;
             }
 
             .form-row {
-                grid-template-columns: 1fr
+                grid-template-columns: 1fr;
+            }
+
+            .section-title h2 {
+                font-size: 2rem;
             }
         }
 
         @media (max-width:480px) {
             .hero {
-                padding-top: 90px
+                padding-top: 90px;
             }
 
             .headline {
-                font-size: 2.1rem
+                font-size: 2rem;
+                line-height: 1.3;
             }
 
-            .gallery img {
-                height: 120px
+            .eyebrow {
+                font-size: 0.9rem;
+            }
+
+            .lead {
+                font-size: 1rem;
+            }
+
+            .hero-cta {
+                flex-direction: column;
+                gap: 16px;
+            }
+
+            .hero-cta button {
+                width: 100%;
+                padding: 1rem;
+                font-size: 1rem;
+            }
+
+            .section-title h2 {
+                font-size: 1.8rem;
+            }
+
+            .gallery {
+                grid-template-columns:2, 1fr;
+            }
+
+            .gallery-item {
+                width: 100%;
+                height: 200px;
+            }
+
+            .faq-section {
+                padding: 20px;
+            }
+
+            .faq-section h1 {
+                font-size: 1.8rem;
+            }
+
+            .reservation {
+                padding: 20px;
+            }
+
+            .dish {
+                margin: 0 12px;
+            }
+
+            .dish img {
+                height: 160px;
+            }
+
+            footer .container {
+                flex-direction: column;
+                text-align: center;
+                gap: 20px;
+            }
+        }
+
+        @media (max-width: 360px) {
+            .cta {
+                display: none;
+            }
+
+            .menu-toggle {
+                position: absolute;
+                right: 20px;
+                top: 20px;
             }
         }
 

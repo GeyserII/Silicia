@@ -44,9 +44,10 @@
 
                 <div class="cta">
                     <button class="btn btn-outline"
-                        onclick="document.getElementById('reservation').scrollIntoView({behavior:'smooth'})">Réserver une table</button>
-                    <!-- <button class="btn btn-primary"
-                        onclick="document.getElementById('menu').scrollIntoView({behavior:'smooth'})">Voir la carte</button> -->
+                        onclick="document.getElementById('reservation').scrollIntoView({behavior:'smooth'})">Réserver</button>
+                    <button class="menu-toggle" aria-label="Menu" onclick="toggleMobileMenu()">
+                        <i class="ri-menu-line"></i>
+                    </button>
                 </div>
             </nav>
         </div>
@@ -264,6 +265,39 @@
     <!-- Scripts -->
     <script src="https://unpkg.com/swiper@9/swiper-bundle.min.js"></script>
     <script>
+        // Mobile Menu Toggle
+        function toggleMobileMenu() {
+            const navLinks = document.getElementById('navLinks');
+            navLinks.classList.toggle('active');
+            
+            // Change icon based on menu state
+            const menuToggle = document.querySelector('.menu-toggle i');
+            if (navLinks.classList.contains('active')) {
+                menuToggle.classList.replace('ri-menu-line', 'ri-close-line');
+            } else {
+                menuToggle.classList.replace('ri-close-line', 'ri-menu-line');
+            }
+        }
+
+        // Close mobile menu when clicking a link
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                document.getElementById('navLinks').classList.remove('active');
+                document.querySelector('.menu-toggle i').classList.replace('ri-close-line', 'ri-menu-line');
+            });
+        });
+
+        // Close mobile menu when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!e.target.closest('.nav-links') && !e.target.closest('.menu-toggle')) {
+                document.getElementById('navLinks').classList.remove('active');
+                const menuToggle = document.querySelector('.menu-toggle i');
+                if (menuToggle) {
+                    menuToggle.classList.replace('ri-close-line', 'ri-menu-line');
+                }
+            }
+        });
+
         // Init Swiper
         const swiper = new Swiper('.swiper', {
             slidesPerView: 1.2,
