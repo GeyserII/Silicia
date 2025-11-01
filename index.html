@@ -1,0 +1,398 @@
+<!-- Silicia - Restaurant Vitrine (HTML, CSS, JS) -->
+<!doctype html>
+<html lang="fr">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Silicia — Sushi & Cuisine Italienne</title>
+    <link rel="stylesheet" href="styles/styles.css">
+
+    <!-- Google Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&family=Dancing+Script:wght@400..700&display=swap"
+        rel="stylesheet">
+    <!-- <script src="https://cdn.tailwindcss.com"></script> -->
+    <!-- Bricolage Grotesque may not be available on Google Fonts; use fallback modern fonts -->
+
+    <!-- RemixIcon -->
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.2.0/fonts/remixicon.css" rel="stylesheet">
+
+    <!-- Swiper (carousel) -->
+    <link rel="stylesheet" href="https://unpkg.com/swiper@9/swiper-bundle.min.css" />
+
+    <meta name="description" content="Silicia — Sushi & Cuisine Italienne. Restaurant haut de gamme à Kinshasa." />
+
+</head>
+
+<body>
+
+    <header>
+        <div class="container">
+            <nav>
+                <div class="brand">
+                    <img src="assets/logo.jpg" alt="Logo" style="width: auto;height:40px;object-fit:cover" />
+                </div>
+
+                <div class="nav-links" id="navLinks">
+                    <a href="#home" class="active">Accueil</a>
+                    <a href="#about">À propos</a>
+                    <a href="#menu">Menu</a>
+                    <a href="#gallery">Galerie</a>
+                    <a href="#reservation">Réservation</a>
+                </div>
+
+                <div class="cta">
+                    <button class="btn btn-outline"
+                        onclick="document.getElementById('reservation').scrollIntoView({behavior:'smooth'})">Réserver une table</button>
+                    <button class="btn btn-primary"
+                        onclick="document.getElementById('menu').scrollIntoView({behavior:'smooth'})">Voir la carte</button>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section id="home" class="container hero">
+            <div class="hero-left">
+                <span class="eyebrow">Sushi × Italian • Cuisine</span>
+                <h2 class="headline">Silicia — Où les saveurs du Japon rencontrent l'âme de l'Italie</h2>
+                <p class="lead">Découvrez une expérience culinaire haut de gamme qui sublime l'équilibre, la technique
+                    et les ingrédients frais. Plats signature, dégustations et ambiance luxueuse au coeur de Gombe,
+                    Kinshasa.</p>
+
+                <div class="hero-cta">
+                    <button class="btn btn-primary"
+                        onclick="document.getElementById('reservation').scrollIntoView({behavior:'smooth'})">Réserver</button>
+                    <button class="btn btn-outline"
+                        onclick="document.getElementById('menu').scrollIntoView({behavior:'smooth'})">Voir le
+                        menu</button>
+                </div>
+
+                <div style="margin-top:18px;color:var(--muted);font-size:0.95rem"><i class="ri-map-pin-line"></i> Avenue
+                    De La Mission ,No 4260, Gombe, Kinshasa | <i class="ri-phone-line"></i> +243859009009</div>
+            </div>
+
+            <div class="hero-right fade-up">
+                <img src="https://images.unsplash.com/photo-1544025162-d76694265947?q=80&w=1400&auto=format&fit=crop&ixlib=rb-4.0.3&s=9f1e1a9c0f70d3a6b3a3f6b8a4b6b3a4"
+                    alt="Plat fusion" class="hero-image" />
+            </div>
+        </section>
+
+        <section id="about" class="container">
+            <div class="section-title">
+                <h2>À propos</h2>
+            </div>
+            <div class="about fade-up">
+                <div style="flex:1">
+                    <p><strong>Silicia</strong> représente une fusion unique entre deux traditions culinaires d'exception : 
+                        la finesse de la cuisine japonaise et la chaleur de la gastronomie italienne. Notre équipe de chefs 
+                        passionnés crée des plats qui célèbrent le meilleur des deux mondes, en utilisant des ingrédients 
+                        frais et de saison sélectionnés avec soin. Dans notre espace élégant au cœur de Gombe, nous vous 
+                        accueillons dans une ambiance raffinée, idéale aussi bien pour vos déjeuners d'affaires que pour 
+                        vos dîners en tête-à-tête. Notre terrasse intimiste et notre intérieur contemporain offrent le 
+                        cadre parfait pour une expérience gastronomique mémorable.</p>
+                </div>
+                <div style="width:360px">
+                    <img src="https://images.unsplash.com/photo-1496412705862-e0088f16f791?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&s=3b1b5b6f6f6f6f6f6f6f6f6f6f6f6f6f"
+                        alt="Interieur"
+                        style="width:100%;height:220px;object-fit:cover;border-radius:12px;box-shadow:0 12px 30px rgba(0,0,0,0.08)" />
+                </div>
+            </div>
+        </section>
+
+        <section class="faq-section">
+            <p class="subtitle">FAQ</p>
+            <h1>Frequently Asked Questions</h1>
+            <p class="description">
+                Proactively answering FAQs boosts user confidence and cuts down on support tickets.
+            </p>
+
+            <div class="faq-container" id="faqContainer"></div>
+        </section>
+
+        <section id="menu" class="container">
+            <div class="section-title">
+                <h2>Menu — Sélection</h2>
+            </div>
+
+            <!-- Swiper -->
+            
+
+        </section>
+
+        <section id="gallery" class="container">
+            <h1>Notre Univers Culinaire</h1>
+            <p class="description">
+                Découvrez l'art de la fusion italo-japonaise à travers nos créations signatures et notre ambiance unique.
+            </p>
+
+            <div class="gallery">
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1719368472026-dc26f70a9b76?q=80&w=736&auto=format&fit=crop"
+                        alt="image 1" />
+                    <div class="overlay">
+                        <h2>Image Title</h2>
+                        <a href="#">
+                            Show More
+                            <svg viewBox="0 0 13 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M8.125 1.625H11.375V4.875" stroke="currentColor" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                                <path d="M5.41602 7.58333L11.3743 1.625" stroke="currentColor" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                                <path
+                                    d="M9.75 7.04167V10.2917C9.75 10.579 9.63586 10.8545 9.4327 11.0577C9.22953 11.2609 8.95398 11.375 8.66667 11.375H2.70833C2.42102 11.375 2.14547 11.2609 1.9423 11.0577C1.73914 10.8545 1.625 10.579 1.625 10.2917V4.33333C1.625 4.04602 1.73914 3.77047 1.9423 3.5673C2.14547 3.36414 2.42102 3.25 2.70833 3.25H5.95833"
+                                    stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" />
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Tu peux dupliquer ce bloc pour d'autres images -->
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1649265825072-f7dd6942baed?q=80&w=798&auto=format&fit=crop"
+                        alt="image 2" />
+                    <div class="overlay">
+                        <h2>Image Title</h2>
+                        <a href="#">
+                            Show More
+                            <svg viewBox="0 0 13 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M8.125 1.625H11.375V4.875" stroke="currentColor" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                                <path d="M5.41602 7.58333L11.3743 1.625" stroke="currentColor" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                                <path
+                                    d="M9.75 7.04167V10.2917C9.75 10.579 9.63586 10.8545 9.4327 11.0577C9.22953 11.2609 8.95398 11.375 8.66667 11.375H2.70833C2.42102 11.375 2.14547 11.2609 1.9423 11.0577C1.73914 10.8545 1.625 10.579 1.625 10.2917V4.33333C1.625 4.04602 1.73914 3.77047 1.9423 3.5673C2.14547 3.36414 2.42102 3.25 2.70833 3.25H5.95833"
+                                    stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" />
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1555212697-194d092e3b8f?q=80&w=687&auto=format&fit=crop"
+                        alt="image 3" />
+                    <div class="overlay">
+                        <h2>Image Title</h2>
+                        <a href="#">
+                            Show More
+                            <svg viewBox="0 0 13 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M8.125 1.625H11.375V4.875" stroke="currentColor" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                                <path d="M5.41602 7.58333L11.3743 1.625" stroke="currentColor" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                                <path
+                                    d="M9.75 7.04167V10.2917C9.75 10.579 9.63586 10.8545 9.4327 11.0577C9.22953 11.2609 8.95398 11.375 8.66667 11.375H2.70833C2.42102 11.375 2.14547 11.2609 1.9423 11.0577C1.73914 10.8545 1.625 10.579 1.625 10.2917V4.33333C1.625 4.04602 1.73914 3.77047 1.9423 3.5673C2.14547 3.36414 2.42102 3.25 2.70833 3.25H5.95833"
+                                    stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" />
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="reservation" class="container">
+            <div class="section-title">
+                <h2>Réservation</h2>
+            </div>
+            <div style="display:flex;gap:20px;flex-wrap:wrap">
+                <div style="flex:1;min-width:280px">
+                    <p style="color:var(--muted)">Réservez votre table en quelques secondes. Nous confirmons par
+                        téléphone ou par e-mail.</p>
+                    <div style="margin-top:12px;color:var(--muted);font-weight:600"><i class="ri-map-pin-2-line"></i>
+                        Avenue De La Mission ,No 4260, Gombe, Kinshasa</div>
+                    <div style="margin-top:6px;color:var(--muted);font-weight:600"><i class="ri-phone-line"></i>
+                        +243859009009</div>
+                </div>
+
+                <div style="flex:1;min-width:320px">
+                    <form id="reservationForm" class="reservation" onsubmit="return handleReservation(event)">
+                        <div class="form-row">
+                            <input type="text" id="name" placeholder="Nom complet" required />
+                            <input type="tel" id="phone" placeholder="Téléphone" required />
+                        </div>
+                        <div class="form-row">
+                            <input type="email" id="email" placeholder="Email" />
+                            <select id="party">
+                                <option value="1">1 personne</option>
+                                <option value="2">2 personnes</option>
+                                <option value="3">3 personnes</option>
+                                <option value="4">4 personnes</option>
+                                <option value="5">5 personnes</option>
+                                <option value="6">6 personnes</option>
+                            </select>
+                        </div>
+                        <div class="form-row">
+                            <input type="date" id="date" required />
+                            <input type="time" id="time" required />
+                        </div>
+                        <div class="form-row full">
+                            <textarea id="note" rows="3"
+                                placeholder="Allergies / Demandes spéciales (optionnel)"></textarea>
+                        </div>
+                        <div class="submit">
+                            <button type="submit" class="btn btn-primary">Envoyer la réservation</button>
+                        </div>
+                    </form>
+                    <div id="resMessage" style="margin-top:12px;color:var(--secondary);font-weight:700"></div>
+                </div>
+            </div>
+        </section>
+
+        <section id="order" class="container">
+            <div class="section-title">
+                <h2>Commande</h2>
+            </div>
+            <p style="color:var(--muted)">Pour commander à emporter ou livraison, appelez-nous:
+                <strong>+243859009009</strong>
+            </p>
+        </section>
+
+    </main>
+
+    <footer>
+        <div class="container"
+            style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px">
+            <div>
+                <strong>Silicia</strong>
+                <div style="color:var(--muted);font-size:0.95rem">Avenue De La Mission ,No 4260, Gombe, Kinshasa</div>
+            </div>
+            <div style="color:var(--muted);font-size:0.95rem">© Silicia — Tous droits réservés</div>
+            <div style="display:flex;gap:10px;color:var(--muted)"><a href="#menu"
+                    style="text-decoration:none;color:inherit">Menu</a> · <a href="#reservation"
+                    style="text-decoration:none;color:inherit">Réserver</a></div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/swiper@9/swiper-bundle.min.js"></script>
+    <script>
+        // Init Swiper
+        const swiper = new Swiper('.swiper', {
+            slidesPerView: 1.2,
+            spaceBetween: 18,
+            centeredSlides: false,
+            loop: false,
+            pagination: { el: '.swiper-pagination', clickable: true },
+            navigation: { nextEl: '.swiper-button-next', prevEl: '.swiper-button-prev' },
+            breakpoints: { 700: { slidesPerView: 2.05 }, 1100: { slidesPerView: 3.1 } }
+        });
+
+        // Simple on-scroll reveal for elements with .fade-up
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('in-view'); })
+        }, { threshold: 0.12 });
+        document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+
+        // Active nav link on scroll
+        const sections = document.querySelectorAll('main section, header');
+        const navlinks = document.querySelectorAll('.nav-links a');
+        window.addEventListener('scroll', () => {
+            const fromTop = window.scrollY + 120;
+            navlinks.forEach(link => {
+                const section = document.querySelector(link.getAttribute('href'));
+                if (!section) return;
+                if (section.offsetTop <= fromTop && section.offsetTop + section.offsetHeight > fromTop) {
+                    navlinks.forEach(l => l.classList.remove('active'));
+                    link.classList.add('active');
+                }
+            })
+        });
+
+        // Reservation form handler (front-end only)
+        function handleReservation(e) {
+            e.preventDefault();
+            const name = document.getElementById('name').value.trim();
+            const phone = document.getElementById('phone').value.trim();
+            const date = document.getElementById('date').value;
+            const time = document.getElementById('time').value;
+            if (!name || !phone || !date || !time) {
+                showMessage('Veuillez remplir les champs requis.', 'error');
+                return false;
+            }
+            // Create a simple payload (in real use send to API)
+            const payload = { name, phone, email: document.getElementById('email').value, party: document.getElementById('party').value, date, time, note: document.getElementById('note').value };
+            console.log('Reservation payload', payload);
+            showMessage('Merci — votre demande a été envoyée. Nous confirmerons par téléphone.', 'success');
+            e.target.reset();
+            return false;
+        }
+        function showMessage(msg, type) {
+            const el = document.getElementById('resMessage'); el.textContent = msg; if (type === 'success') { el.style.color = 'var(--secondary)' } else { el.style.color = 'crimson' }
+            setTimeout(() => el.textContent = '', 6000);
+        }
+
+        // Lightweight performance note: images use Unsplash CDN placeholders. Replace by local optimized images in production.
+
+
+        const faqsData = [
+            {
+                question: 'Quelles sont vos heures d\'ouverture ?',
+                answer: 'Nous sommes ouverts du mardi au dimanche, de 11h30 à 14h30 et de 18h30 à 22h30. Fermé le lundi.'
+            },
+            {
+                question: 'Proposez-vous des options végétariennes ?',
+                answer: 'Oui, notre carte propose plusieurs options végétariennes et véganes, tant en cuisine italienne que japonaise.'
+            },
+            {
+                question: 'Comment puis-je réserver une table ?',
+                answer: 'Vous pouvez réserver via notre formulaire en ligne, par téléphone au +243859009009, ou directement sur place.'
+            },
+            {
+                question: 'Proposez-vous un service de livraison ?',
+                answer: 'Oui, nous proposons la livraison dans toute la zone de Gombe. Appelez-nous pour plus de détails.'
+            },
+            {
+                question: 'Acceptez-vous les événements privés ?',
+                answer: 'Oui, nous pouvons accueillir vos événements privés et professionnels. Contactez-nous pour un devis personnalisé.'
+            }
+        ];
+
+        const faqContainer = document.getElementById('faqContainer');
+
+        // === GENERATION DYNAMIQUE ===
+        faqContainer.innerHTML = faqsData.map((faq, index) => `
+            <div class="faq-item" data-index="${index}">
+                <div class="faq-header">
+                    <h2>${faq.question}</h2>
+                    <svg class="faq-icon" width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="m4.5 7.2 3.793 3.793a1 1 0 0 0 1.414 0L13.5 7.2" stroke="#1D293D" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                </div>
+                <p class="faq-answer">${faq.answer}</p>
+            </div>
+        `).join('');
+
+        // === LOGIQUE D'OUVERTURE ===
+        const faqItems = document.querySelectorAll('.faq-item');
+
+        faqItems.forEach((item, index) => {
+            const header = item.querySelector('.faq-header');
+            const answer = item.querySelector('.faq-answer');
+            const icon = item.querySelector('.faq-icon');
+
+            header.addEventListener('click', () => {
+                // Fermer les autres
+                faqItems.forEach((other, i) => {
+                    if (i !== index) {
+                        other.querySelector('.faq-answer').classList.remove('open');
+                        other.querySelector('.faq-icon').classList.remove('rotate');
+                    }
+                });
+
+                // Ouvrir / Fermer celui cliqué
+                answer.classList.toggle('open');
+                icon.classList.toggle('rotate');
+            });
+        });
+
+        document.querySelectorAll(".overlay a").forEach(link => {
+            link.addEventListener("click", e => {
+                e.preventDefault();
+                alert("Show more clicked !");
+            });
+        });
+    </script>
+</body>
+
+</html>
