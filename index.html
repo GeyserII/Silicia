@@ -19,7 +19,10 @@
     <link href="https://cdn.jsdelivr.net/npm/remixicon@3.2.0/fonts/remixicon.css" rel="stylesheet">
 
     <!-- Swiper (carousel) -->
-    <link rel="stylesheet" href="https://unpkg.com/swiper@9/swiper-bundle.min.css" />
+    <link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css"
+/>
 
     <meta name="description" content="Silicia — Sushi & Cuisine Italienne. Restaurant haut de gamme à Kinshasa." />
 
@@ -86,10 +89,13 @@
             </div>
             <div class="about fade-up">
                 <div style="flex:1">
-                    <p><strong>Silicia</strong> représente une fusion unique entre deux traditions culinaires d'exception : 
-                        la finesse de la cuisine japonaise et la chaleur de la gastronomie italienne. Notre équipe de chefs 
-                        passionnés crée des plats qui célèbrent le meilleur des deux mondes, en utilisant des ingrédients 
-                        </p>
+                    <p><strong>Silicia</strong> représente une fusion unique entre deux traditions culinaires
+                        d'exception :
+                        la finesse de la cuisine japonaise et la chaleur de la gastronomie italienne. Notre équipe de
+                        chefs
+                        passionnés crée des plats qui célèbrent le meilleur des deux mondes, en utilisant des
+                        ingrédients
+                    </p>
                 </div>
                 <div style="width:360px">
                     <img src="https://images.unsplash.com/photo-1496412705862-e0088f16f791?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&s=3b1b5b6f6f6f6f6f6f6f6f6f6f6f6f6f"
@@ -103,7 +109,7 @@
             <p class="subtitle">FAQ</p>
             <h1>Frequently Asked Questions</h1>
             <p class="description">
-                Proactively answering FAQs boosts user confidence and cuts down on support tickets.
+                Ceci repondra a certaines questions fréquentes sur Silicia.
             </p>
 
             <div class="faq-container" id="faqContainer"></div>
@@ -113,16 +119,39 @@
             <div class="section-title">
                 <h2>Menu — Sélection</h2>
             </div>
+            <p class="blog-subtitle">
+                Stay ahead of the curve with fresh content on code, design, startups, and everything in between.
+            </p>
+
+            <div class="blog-container">
+                <div class="blog-card">
+                    <img src="https://images.unsplash.com/photo-1590650516494-0c8e4a4dd67e?w=1200&h=800&auto=format&fit=crop&q=60"
+                        alt="Article 1">
+                    <h3 class="blog-card-title">Plat de riz au cury enrobé avec des légumes de la région</h3>
+                </div>
+                <div class="blog-card">
+                    <img src="https://images.unsplash.com/photo-1714974528646-ea024a3db7a7?w=1200&h=800&auto=format&fit=crop&q=60"
+                        alt="Article 2">
+                    <h3 class="blog-card-title">Plat de riz au cury enrobé avec des légumes de la région</h3>
+                </div>
+                <div class="blog-card">
+                    <img src="https://images.unsplash.com/photo-1713947501966-34897f21162e?w=1200&h=800&auto=format&fit=crop&q=60"
+                        alt="Article 3">
+                    <h3 class="blog-card-title">Plat de riz au cury enrobé avec des légumes de la région</h3>
+                </div>
+            </div>
+            <a href="#" class="see-menu">Voir notre menu</a>
 
             <!-- Swiper -->
-            
+
 
         </section>
 
         <section id="gallery" class="container">
             <h1>Notre Univers Culinaire</h1>
             <p class="description">
-                Découvrez l'art de la fusion italo-japonaise à travers nos créations signatures et notre ambiance unique.
+                Découvrez l'art de la fusion italo-japonaise à travers nos créations signatures et notre ambiance
+                unique.
             </p>
 
             <div class="gallery">
@@ -201,6 +230,7 @@
                         Avenue De La Mission ,No 4260, Gombe, Kinshasa</div>
                     <div style="margin-top:6px;color:var(--muted);font-weight:600"><i class="ri-phone-line"></i>
                         +243859009009</div>
+                    <button class="resv-btn"><a href="#">Faire une reservation</a></button>
                 </div>
 
                 <div style="flex:1;min-width:320px">
@@ -263,13 +293,13 @@
     </footer>
 
     <!-- Scripts -->
-    <script src="https://unpkg.com/swiper@9/swiper-bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
     <script>
         // Mobile Menu Toggle
         function toggleMobileMenu() {
             const navLinks = document.getElementById('navLinks');
             navLinks.classList.toggle('active');
-            
+
             // Change icon based on menu state
             const menuToggle = document.querySelector('.menu-toggle i');
             if (navLinks.classList.contains('active')) {
