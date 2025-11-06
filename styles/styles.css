@@ -48,7 +48,8 @@ nav {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 14px 0
+    padding: 14px 0;
+    background: #fff;
 }
 
 .brand {
@@ -107,7 +108,9 @@ nav {
     background: var(--secondary);
     color: white;
 }
-
+main{
+    margin-top: 90px;
+}
 /* HERO */
 .hero {
     display: grid;
@@ -569,6 +572,19 @@ svg {
     box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
     border: 1px solid rgba(255, 255, 255, 0.2);
 }
+.resv-btn{
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: var(--secondary);
+    border: none;
+    border-radius: 30px;
+    font-size: 1rem;
+    font-weight: 700;
+}
+.resv-btn a{
+    color: white;
+    text-decoration: none;
+}
 
 .form-row {
     display: grid;
@@ -811,4 +827,90 @@ footer {
 .fade-up.in-view {
     opacity: 1;
     transform: none
+}
+
+
+
+
+/* Chip Menu Styles
+ */
+.category-section {
+    padding: 24px;
+}
+
+.category-title {
+    font-size: 18px;
+    font-weight: 600;
+    color: #000;
+    margin-bottom: 16px;
+    letter-spacing: -0.2px;
+}
+
+.chip-menu {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.chip {
+    padding: 8px 16px;
+    background-color: #f1f3f4;
+    border: 1px solid #e0e0e0;
+    border-radius: 16px;
+    font-size: 14px;
+    font-weight: 400;
+    color: #3c4043;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    user-select: none;
+    letter-spacing: -0.1px;
+}
+
+.chip:hover {
+    background-color: #ffe7d1;
+    border-color: #d2e3fc;
+    color: var(--secondary);
+}
+
+.chip.active {
+    background-color: var(--secondary);
+    border-color: var(--primary);
+    color: white;
+    font-weight: 500;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .container {
+        padding: 0 16px;
+    }
+    
+    .category-section {
+        padding: 20px;
+    }
+    
+    .chip-menu {
+        gap: 6px;
+    }
+    
+    .chip {
+        padding: 6px 14px;
+        font-size: 13px;
+    }
+}
+
+@media (max-width: 480px) {
+    .category-section {
+        padding: 16px;
+    }
+    
+    .category-title {
+        font-size: 16px;
+        margin-bottom: 12px;
+    }
+    
+    .chip {
+        padding: 6px 12px;
+        font-size: 12px;
+    }
 }
