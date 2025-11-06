@@ -40,7 +40,7 @@ header {
     top: 0;
     z-index: 60;
     backdrop-filter: blur(6px);
-    background: linear-gradient(180deg, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.6));
+    background: #fff;
     box-shadow: 0 6px 20px rgba(0, 0, 0, 0.06);
 }
 
