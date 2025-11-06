@@ -1,0 +1,88 @@
+<!-- Silicia - Restaurant Vitrine (HTML, CSS, JS) -->
+<!doctype html>
+<html lang="fr">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Silicia — Gallerie</title>
+    <link rel="stylesheet" href="../styles/styles.css">
+
+    <!-- Google Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&family=Dancing+Script:wght@400..700&display=swap"
+        rel="stylesheet">
+    <!-- <script src="https://cdn.tailwindcss.com"></script> -->
+    <!-- Bricolage Grotesque may not be available on Google Fonts; use fallback modern fonts -->
+
+    <!-- RemixIcon -->
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.2.0/fonts/remixicon.css" rel="stylesheet">
+
+    <!-- Swiper (carousel) -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css" />
+
+    <meta name="description" content="Silicia — Sushi & Cuisine Italienne. Restaurant haut de gamme à Kinshasa." />
+
+</head>
+
+<body>
+
+    <header>
+        <div class="container">
+            <nav>
+                <div class="brand">
+                    <img src="../assets/logo.jpg" alt="Logo" style="width: auto;height:40px;object-fit:cover" />
+                </div>
+
+                <div class="nav-links" id="navLinks">
+                    <a href="../index.html" >Accueil</a>
+                    <a href="menu.html">Menu</a>
+                    <a href="#" class="active">Galerie</a>
+                    <a href="res.html">Réservation</a>
+                </div>
+
+                <div class="cta">
+                    <button class="btn btn-outline"
+                        onclick="document.getElementById('reservation').scrollIntoView({behavior:'smooth'})">Réserver</button>
+                    <button class="menu-toggle" aria-label="Menu" onclick="toggleMobileMenu()">
+                        <i class="ri-menu-line"></i>
+                    </button>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section id="menu" class="container">
+            
+
+            <!-- Swiper -->
+
+
+        </section>
+
+
+    </main>
+
+    <footer>
+        <div class="container"
+            style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px">
+            <div>
+                <strong>Silicia</strong>
+                <div style="color:var(--muted);font-size:0.95rem">Avenue De La Mission ,No 4260, Gombe, Kinshasa</div>
+            </div>
+            <div style="color:var(--muted);font-size:0.95rem">© Silicia — Tous droits réservés</div>
+            <div style="display:flex;gap:10px;color:var(--muted)"><a href="#menu"
+                    style="text-decoration:none;color:inherit">Menu</a> · <a href="#reservation"
+                    style="text-decoration:none;color:inherit">Réserver</a></div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
+    <script src="../styles/scipt.js">
+
+    </script>
+</body>
+
+</html>
