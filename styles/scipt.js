@@ -156,3 +156,11 @@
                 alert("Show more clicked !");
             });
         });
+
+
+
+
+
+        // Gallery Carousel
+
+        

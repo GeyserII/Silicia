@@ -687,7 +687,9 @@ footer {
         padding: 16px;
         border-bottom: 1px solid rgba(0, 0, 0, 0.04);
     }
-
+    .navbar-btn{
+        display: none;
+    }
     .hero {
         grid-template-columns: 1fr;
         gap: 18px;
@@ -914,3 +916,9 @@ footer {
         font-size: 12px;
     }
 }
+
+
+
+
+/* Gallery */ 
+
