@@ -53,19 +53,60 @@
     </header>
 
     <main>
-        <section id="menu" class="container">
-            
+        <section id="reservation" class="container">
             <div class="section-title">
-                <h2>Reservations</h2>
+                <h2>Réserver une table</h2>
             </div>
-            <p class="blog-subtitle">
-                Stay ahead of the curve with fresh content on code, design, startups, and everything in between.
-            </p>
-            <!-- Swiper -->
 
+            <div class="reservation-intro" style="max-width:900px;text-align:center;margin:0 auto 28px;color:var(--muted)">
+                <p style="margin:0 0 8px">Réservez votre table en quelques secondes. Nous confirmons par téléphone ou e‑mail.</p>
+                <p style="margin:0;font-size:0.95rem">Horaires : Mardi–Dimanche 11h30–14h30 • 18h30–22h30 — Fermé le lundi</p>
+            </div>
 
+            <div style="display:flex;gap:28px;flex-wrap:wrap;align-items:flex-start;width:100%;max-width:1100px;margin:0 auto">
+                <div style="flex:1;min-width:320px">
+                    <img src="../assets/restaurant_interior.jpg" alt="Intérieur Silicia" style="width:100%;height:320px;object-fit:cover;border-radius:12px;box-shadow:0 12px 30px rgba(0,0,0,0.06)" />
+                    <div style="margin-top:12px;color:var(--muted);font-weight:600"><i class="ri-map-pin-2-line"></i> Avenue De La Mission, No 4260, Gombe, Kinshasa</div>
+                    <div style="margin-top:6px;color:var(--muted);font-weight:600"><i class="ri-phone-line"></i> +243859009009</div>
+                </div>
+
+                <div style="flex:1;min-width:360px">
+                    <form id="reservationForm" class="reservation" onsubmit="return handleReservation(event)">
+                        <div class="form-row">
+                            <input type="text" id="name" name="name" placeholder="Nom complet" aria-label="Nom complet" required />
+                            <input type="tel" id="phone" name="phone" placeholder="Téléphone" aria-label="Téléphone" required />
+                        </div>
+                        <div class="form-row">
+                            <input type="email" id="email" name="email" placeholder="Email (optionnel)" aria-label="Email" />
+                            <select id="party" name="party" aria-label="Nombre de personnes">
+                                <option value="1">1 personne</option>
+                                <option value="2">2 personnes</option>
+                                <option value="3">3 personnes</option>
+                                <option value="4">4 personnes</option>
+                                <option value="5">5 personnes</option>
+                                <option value="6">6 personnes</option>
+                                <option value="8">8 personnes</option>
+                                <option value="10">10+ personnes</option>
+                            </select>
+                        </div>
+                        <div class="form-row">
+                            <input type="date" id="date" name="date" required />
+                            <input type="time" id="time" name="time" required />
+                        </div>
+                        <div class="form-row full">
+                            <textarea id="note" name="note" rows="4" placeholder="Allergies / demandes spéciales (optionnel)"></textarea>
+                        </div>
+                        <div style="display:flex;gap:12px;align-items:center;justify-content:space-between;margin-top:8px">
+                            <div style="color:var(--muted);font-size:0.9rem">Nous contacterons pour confirmation</div>
+                            <div class="submit">
+                                <button type="submit" class="btn btn-primary">Envoyer la réservation</button>
+                            </div>
+                        </div>
+                    </form>
+                    <div id="resMessage" style="margin-top:14px;color:var(--secondary);font-weight:700"></div>
+                </div>
+            </div>
         </section>
-
 
     </main>
 
@@ -85,8 +126,50 @@
 
     <!-- Scripts -->
     <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
-    <script src="../styles/scipt.js">
+    <script>
+        // Mobile Menu Toggle (simple)
+        function toggleMobileMenu() {
+            const navLinks = document.getElementById('navLinks');
+            navLinks.classList.toggle('active');
+            const menuToggleIcon = document.querySelector('.menu-toggle i');
+            if (!menuToggleIcon) return;
+            if (navLinks.classList.contains('active')) menuToggleIcon.classList.replace('ri-menu-line', 'ri-close-line');
+            else menuToggleIcon.classList.replace('ri-close-line', 'ri-menu-line');
+        }
 
+        // Reservation form handler (front-end only)
+        function handleReservation(e) {
+            e.preventDefault();
+            const name = document.getElementById('name').value.trim();
+            const phone = document.getElementById('phone').value.trim();
+            const date = document.getElementById('date').value;
+            const time = document.getElementById('time').value;
+            if (!name || !phone || !date || !time) {
+                showMessage('Veuillez remplir les champs requis.', 'error');
+                return false;
+            }
+            const payload = {
+                name,
+                phone,
+                email: document.getElementById('email').value,
+                party: document.getElementById('party').value,
+                date,
+                time,
+                note: document.getElementById('note').value
+            };
+            console.log('Reservation payload', payload);
+            showMessage('Merci — votre demande a été envoyée. Nous confirmerons par téléphone.', 'success');
+            e.target.reset();
+            return false;
+        }
+
+        function showMessage(msg, type) {
+            const el = document.getElementById('resMessage');
+            el.textContent = msg;
+            if (type === 'success') el.style.color = 'var(--secondary)';
+            else el.style.color = 'crimson';
+            setTimeout(() => el.textContent = '', 6000);
+        }
     </script>
 </body>
 
