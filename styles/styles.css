@@ -1033,7 +1033,12 @@ footer {
         font-size: 12px;
     }
 }
-
+.see-drinks{
+    text-decoration: none;
+    color: var(--secondary);
+    font-size: 1rem;
+    font-weight: 600;
+}
 
 
 
