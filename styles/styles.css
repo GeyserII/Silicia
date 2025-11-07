@@ -897,6 +897,9 @@ footer {
     .reservation {
         padding: 20px;
     }
+    .res-service img {
+        display: none;
+    }
 
     .dish {
         margin: 0 12px;
