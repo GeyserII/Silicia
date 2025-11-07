@@ -108,6 +108,13 @@ nav {
     background: var(--secondary);
     color: white;
 }
+.ordering-btn{
+    background: transparent;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 30px;
+    font-size: 1.5rem;
+}
 
 main {
     margin-top: 90px;
@@ -366,6 +373,7 @@ section {
     /* 288px */
     width: 100%;
     transition: transform 0.3s ease;
+    padding: 10px;
 }
 
 .blog-card:hover img {
@@ -411,11 +419,14 @@ section {
 /* Responsive */
 @media (max-width: 768px) {
     .blog-container {
-        gap: 1.5rem;
+        gap: .5rem;
     }
 
     .blog-card {
-        max-width: 100%;
+        max-width: 45%;
+    }
+    .blog-card-title {
+        font-size: .9rem;
     }
 }
 
@@ -847,6 +858,10 @@ footer {
 @media (max-width:480px) {
     .hero {
         padding-top: 90px;
+    }
+    #home{
+        display: flex;
+        flex-direction: column-reverse;
     }
 
     .headline {
