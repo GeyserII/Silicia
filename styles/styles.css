@@ -217,7 +217,13 @@ section {
 .about {
     display: flex;
     gap: 28px;
-    align-items: center
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+.about div{
+    display: flex;
+    width: 50%;
 }
 
 .about p {
@@ -538,17 +544,82 @@ svg {
     line-height: 1.6;
 }
 
-.price {
-    margin-left: auto;
-    font-weight: 800;
-    color: var(--primary);
-    font-size: 1.25rem;
-    background: rgba(252, 79, 2, 0.08);
-    padding: 8px 16px;
-    border-radius: 20px;
-}
+            .price {
+                margin-left: auto;
+                font-weight: 800;
+                color: var(--primary);
+                font-size: 1.25rem;
+                background: rgba(252, 79, 2, 0.08);
+                padding: 8px 16px;
+                border-radius: 20px;
+            }
 
-/* Gallery */
+            /* Drinks Grid Layout */
+            .driks-container {
+                display: grid;
+                grid-template-columns: repeat(4, 1fr);
+                gap: 20px;
+                padding: 24px;
+                max-width: 1200px;
+                margin: 0 auto;
+            }
+
+            .drink-card {
+                background: #ffffff;
+                border: 1px solid #eaeaea;
+                border-radius: 12px;
+                padding: 20px;
+                display: flex;
+                flex-direction: column;
+                gap: 10px;
+                width: 100%;
+            }
+
+            .drink-card h3 {
+                margin: 0;
+                color: var(--secondary);
+                font-family: var(--font-display);
+                font-size: 1.1rem;
+                font-weight: 600;
+            }
+
+            .drink-card p {
+                margin: 0;
+                color: var(--muted);
+                font-size: 0.9rem;
+                line-height: 1.5;
+            }
+
+            .drink-card .price {
+                margin-top: auto;
+                align-self: flex-start;
+                font-size: 1rem;
+                padding: 6px 12px;
+            }
+
+            /* Responsive adjustments for drinks grid */
+            @media (max-width: 1200px) {
+                .driks-container {
+                    grid-template-columns: repeat(3, 1fr);
+                    padding: 20px;
+                }
+            }
+
+            @media (max-width: 900px) {
+                .driks-container {
+                    grid-template-columns: repeat(2, 1fr);
+                }
+            }
+
+            @media (max-width: 600px) {
+                .driks-container {
+                    grid-template-columns: 1fr;
+                    padding: 16px;
+                }
+                .drink-card {
+                    padding: 16px;
+                }
+            }/* Gallery */
 .gallery {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -717,7 +788,9 @@ footer {
         flex-direction: column-reverse;
         text-align: center;
     }
-
+    .about div{
+        width: 100%;
+    }
     .gallery {
         grid-template-columns: repeat(2, 1fr);
     }
@@ -892,7 +965,13 @@ footer {
     color: white;
     font-weight: 500;
 }
-
+.drink-container{
+    display: flex;
+    gap: 20px;
+    width: 100%;
+    flex-wrap: wrap;
+    justify-content: center;
+}
 /* Responsive */
 @media (max-width: 768px) {
     .container {
