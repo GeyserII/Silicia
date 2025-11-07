@@ -222,46 +222,18 @@
                 <h2>Réservation</h2>
             </div>
             <div style="display:flex;gap:20px;flex-wrap:wrap">
-                <div style="flex:1;min-width:280px">
+                <div style="flex:1;min-width:280px" class="reservation-wrote">
                     <p style="color:var(--muted)">Réservez votre table en quelques secondes. Nous confirmons par
                         téléphone ou par e-mail.</p>
                     <div style="margin-top:12px;color:var(--muted);font-weight:600"><i class="ri-map-pin-2-line"></i>
                         Avenue De La Mission ,No 4260, Gombe, Kinshasa</div>
                     <div style="margin-top:6px;color:var(--muted);font-weight:600"><i class="ri-phone-line"></i>
                         +243859009009</div>
-                    <button class="resv-btn"><a href="#">Réserver ici</a></button>
+                    <button class="resv-btn"><a href="src/res.html">Réserver ici</a></button>
                 </div>
 
-                <div style="flex:1;min-width:320px">
-                    <form id="reservationForm" class="reservation" onsubmit="return handleReservation(event)">
-                        <div class="form-row">
-                            <input type="text" id="name" placeholder="Nom complet" required />
-                            <input type="tel" id="phone" placeholder="Téléphone" required />
-                        </div>
-                        <div class="form-row">
-                            <input type="email" id="email" placeholder="Email" />
-                            <select id="party">
-                                <option value="1">1 personne</option>
-                                <option value="2">2 personnes</option>
-                                <option value="3">3 personnes</option>
-                                <option value="4">4 personnes</option>
-                                <option value="5">5 personnes</option>
-                                <option value="6">6 personnes</option>
-                            </select>
-                        </div>
-                        <div class="form-row">
-                            <input type="date" id="date" required />
-                            <input type="time" id="time" required />
-                        </div>
-                        <div class="form-row full">
-                            <textarea id="note" rows="3"
-                                placeholder="Allergies / Demandes spéciales (optionnel)"></textarea>
-                        </div>
-                        <div class="submit">
-                            <button type="submit" class="btn btn-primary">Envoyer la réservation</button>
-                        </div>
-                    </form>
-                    <div id="resMessage" style="margin-top:12px;color:var(--secondary);font-weight:700"></div>
+                <div style="flex:1;min-width:320px" class="res-service">
+                    <img src="assets/silicia-service.jpg" alt="Réservation">
                 </div>
             </div>
         </section>

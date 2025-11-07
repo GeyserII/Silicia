@@ -596,7 +596,16 @@ svg {
 .form-row.full {
     grid-template-columns: 1fr;
 }
-
+.res-service{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.res-service img{
+    width: 70%;
+    height: auto;
+    border-radius: 12px;
+}
 input,
 select,
 textarea {
@@ -731,7 +740,12 @@ footer {
     .form-row {
         grid-template-columns: 1fr;
     }
-
+    .reservation-wrote{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
     .section-title h2 {
         font-size: 2rem;
     }
