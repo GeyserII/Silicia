@@ -1310,7 +1310,8 @@ footer {
     flex: 1;
     padding: 14px 18px;
     min-height: 0; 
-    width: 100%;/* min-height:0 for proper flex overflow */
+    width: 100%;
+    /* min-height:0 for proper flex overflow */
 }
 
 /* Main section for items */
@@ -1321,13 +1322,14 @@ footer {
     display: grid;
     gap: 6px;
     align-items: start;
-    grid-auto-rows: minmax(80px, auto);
+    grid-template-columns: repeat(4, 1fr);
     width: 100%;
+    height: auto;
 }
 
 /* Cards */
 .card {
-    background: #ffffff;
+    background: #fff;
     border-radius: 10px;
     padding: 12px;
     display: flex;
@@ -1337,7 +1339,7 @@ footer {
     border: 1px solid rgba(0, 0, 0, 0.06);
     font-family: var(--font-display);
     width: 100%;
-    min-height: 86px;
+    height: 100%;
     margin: 10px;
 }
 
@@ -1386,6 +1388,7 @@ footer {
     -webkit-overflow-scrolling: touch;
     scrollbar-width: thin;
     width: 100%;
+    height: auto;
 }
 
 .selection-bar::-webkit-scrollbar {
@@ -1498,7 +1501,7 @@ footer {
 
 @media (max-width:600px) {
     .items-area {
-        gap: 10px;
+        gap: 5px;
     }
 
     .modal-header h2 {
