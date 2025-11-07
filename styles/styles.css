@@ -108,7 +108,8 @@ nav {
     background: var(--secondary);
     color: white;
 }
-.ordering-btn{
+
+.ordering-btn {
     background: transparent;
     border: none;
     padding: 8px 12px;
@@ -425,6 +426,7 @@ section {
     .blog-card {
         max-width: 45%;
     }
+
     .blog-card-title {
         font-size: .9rem;
     }
@@ -859,7 +861,8 @@ footer {
     .hero {
         padding-top: 90px;
     }
-    #home{
+
+    #home {
         display: flex;
         flex-direction: column-reverse;
     }
@@ -912,6 +915,7 @@ footer {
     .reservation {
         padding: 20px;
     }
+
     .res-service img {
         display: none;
     }
@@ -1048,7 +1052,8 @@ footer {
         font-size: 12px;
     }
 }
-.see-drinks{
+
+.see-drinks {
     text-decoration: none;
     color: var(--secondary);
     font-size: 1rem;
@@ -1096,7 +1101,7 @@ footer {
     bottom: 0;
     left: 0;
     right: 0;
-    background: linear-gradient(transparent, rgba(0,0,0,0.7));
+    background: linear-gradient(transparent, rgba(0, 0, 0, 0.7));
     color: white;
     padding: 1.5rem 1rem 1rem;
     opacity: 0;
@@ -1151,22 +1156,23 @@ footer {
         grid-auto-rows: 150px;
         gap: 8px;
     }
-    
+
     .large-horizontal {
         grid-column: span 2;
         grid-row: span 2;
     }
-    
-    .square, .vertical {
+
+    .square,
+    .vertical {
         grid-column: span 1;
         grid-row: span 2;
     }
-    
+
     .medium-horizontal {
         grid-column: span 2;
         grid-row: span 1;
     }
-    
+
     .small-square {
         grid-column: span 1;
         grid-row: span 1;
@@ -1184,3 +1190,340 @@ footer {
         grid-row: span 1 !important;
     }
 } */
+
+.command-wrapper {
+    height: 30vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.command-button {
+    padding: 12px 24px;
+    background-color: var(--secondary);
+    color: white;
+    border: none;
+    border-radius: 30px;
+    font-size: 1.2rem;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.modal-backdrop {
+    position: fixed;
+    inset: 0;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    background: rgba(0, 0, 0, 0.45); /* slightly dark backdrop for focus */
+    padding: 20px; /* breathing room on small viewports */
+}
+
+.modal-backdrop.active {
+    display: flex;
+}
+
+.modal {
+    width: 100%;
+    max-width: 920px; /* compact on large screens */
+    max-height: 85vh; /* fit nicely on tall screens */
+    margin: 0 auto;
+    border-radius: 12px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    background: linear-gradient(180deg, #ffffff, #fbfbfb);
+    box-shadow: 0 18px 40px rgba(0, 0, 0, 0.16);
+    transform: translateY(8px);
+    opacity: 0;
+    transition: transform 220ms ease, opacity 220ms ease;
+}
+
+.modal-backdrop.active .modal {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+/* Header */
+.modal-header {
+    padding: 18px 20px;
+    display: flex;
+    flex-direction: column;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+    position: relative;
+    width: 100%;
+}
+
+.modal-title {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.modal-title h2 {
+    margin: 0;
+    font-size: 20px;
+    letter-spacing: 0.2px;
+}
+
+/* Toggle */
+.toggle {
+    display: inline-flex;
+    background: var(--glass);
+    padding: 6px;
+    border-radius: 999px;
+    gap: 6px;
+}
+
+.toggle button {
+    background: transparent;
+    border: 0;
+    color: var(--muted);
+    padding: 8px 12px;
+    border-radius: 999px;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.toggle button.active {
+    background: var(--secondary);
+    color: white;
+}
+
+/* Close button top-right */
+.close-btn {
+    background: transparent;
+    border: 0;
+    color: var(--muted);
+    font-size: 18px;
+    cursor: pointer;
+    padding: 8px;
+    border-radius: 8px;
+}
+
+/* Modal content flex */
+.modal-body {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    flex: 1;
+    padding: 14px 18px;
+    min-height: 0; 
+    width: 100%;/* min-height:0 for proper flex overflow */
+}
+
+/* Main section for items */
+.items-area {
+    flex: 1;
+    overflow-y: auto;
+    padding: 8px;
+    display: grid;
+    gap: 6px;
+    align-items: start;
+    grid-auto-rows: minmax(80px, auto);
+    width: 100%;
+}
+
+/* Cards */
+.card {
+    background: #ffffff;
+    border-radius: 10px;
+    padding: 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    cursor: pointer;
+    border: 1px solid rgba(0, 0, 0, 0.06);
+    font-family: var(--font-display);
+    width: 100%;
+    min-height: 86px;
+    margin: 10px;
+}
+
+
+.thumb {
+    width: 66px;
+    height: 66px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 28px;
+    background: rgba(0, 0, 0, 0.03);
+}
+
+.meta {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.meta .name {
+    font-weight: 700;
+    font-size: 14px;
+}
+
+.meta .desc {
+    font-size: 12px;
+    color: var(--muted)
+}
+
+.price {
+    font-weight: 700;
+    color: var(--accent)
+}
+
+/* Selection bar (horizontal) */
+.selection-bar {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    padding: 8px 8px;
+    border-top: 1px solid rgba(0, 0, 0, 0.06);
+    overflow-x: auto;
+    white-space: nowrap; /* keep items on a single horizontal line */
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: thin;
+    width: 100%;
+}
+
+.selection-bar::-webkit-scrollbar {
+    height: 0; /* hide by default */
+}
+
+.selection-bar:hover::-webkit-scrollbar {
+    height: 8px; /* reveal on hover for discoverability */
+}
+
+.selection-bar::-webkit-scrollbar-thumb {
+    background: rgba(0, 0, 0, 0.12);
+    border-radius: 999px;
+}
+
+.sel-item {
+    display: inline-flex; /* keep inline for horizontal flow */
+    flex: 0 0 auto; /* prevent shrinking/growing */
+    min-width: 140px;
+    max-width: 260px;
+    gap: 8px;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.03);
+    padding: 8px 10px;
+    border-radius: 10px;
+    border: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+.sel-item .qty {
+    font-weight: 800;
+    padding: 6px 8px;
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.02);
+    margin-right: 6px;
+    min-width: 28px;
+    text-align: center
+}
+
+.sel-item .sel-meta {
+    display: flex;
+    flex-direction: column;
+}
+
+.sel-item .sel-name {
+    font-weight: 700;
+    font-size: 13px
+}
+
+.sel-item .sel-price {
+    font-size: 13px;
+    color: var(--accent)
+}
+
+.sel-item .remove {
+    margin-left: auto;
+    border: 0;
+    background: transparent;
+    color: var(--muted);
+    cursor: pointer;
+    padding: 6px
+}
+
+/* Footer */
+.modal-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px 18px;
+    border-top: 1px solid rgba(255, 255, 255, 0.03);
+    gap: 12px;
+    width: 100%;
+}
+
+.total {
+    font-size: 18px;
+    font-weight: 800
+}
+
+.cmd-btn {
+    background: var(--secondary);
+    color: white;
+    border-radius: 999px;
+    padding: 10px 18px;
+    cursor: pointer;
+    font-weight: 700;
+    border: none;
+}
+
+/* Responsive grid columns */
+.items-area.grid-4 {
+    grid-template-columns: repeat(4, 1fr);
+}
+
+.items-area.grid-2 {
+    grid-template-columns: repeat(2, 1fr);
+}
+
+/* Makes sure on small screens modal fills the viewport nicely */
+@media (max-width:900px) {
+    .modal {
+        max-width: 100%;
+        max-height: 100%;
+        border-radius: 0;
+    }
+
+    .modal-header {
+        padding: 14px;
+    }
+}
+
+@media (max-width:600px) {
+    .items-area {
+        gap: 10px;
+    }
+
+    .modal-header h2 {
+        font-size: 18px
+    }
+
+    .items-area.grid-4 {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    /* fallback if css not loaded */
+    .modal {
+        padding-bottom: 0
+    }
+}
+
+/* Scrollbar styles for webkit */
+.items-area::-webkit-scrollbar,
+.selection-bar::-webkit-scrollbar {
+    height: 10px;
+    width: 10px;
+}
+
+.items-area::-webkit-scrollbar-thumb,
+.selection-bar::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.06);
+    border-radius: 999px;
+}

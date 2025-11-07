@@ -1,0 +1,346 @@
+<!-- Silicia - Restaurant Vitrine (HTML, CSS, JS) -->
+<!doctype html>
+<html lang="fr">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Silicia — Commander</title>
+    <link rel="stylesheet" href="../styles/styles.css">
+
+    <!-- Google Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&family=Dancing+Script:wght@400..700&display=swap"
+        rel="stylesheet">
+    <!-- <script src="https://cdn.tailwindcss.com"></script> -->
+    <!-- Bricolage Grotesque may not be available on Google Fonts; use fallback modern fonts -->
+
+    <!-- RemixIcon -->
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.2.0/fonts/remixicon.css" rel="stylesheet">
+
+    <!-- Swiper (carousel) -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css" />
+
+    <meta name="description" content="Silicia — Sushi & Cuisine Italienne. Restaurant haut de gamme à Kinshasa." />
+
+</head>
+
+<body>
+
+    <header>
+        <div class="container">
+            <nav>
+                <div class="brand">
+                    <img src="../assets/logo.jpg" alt="Logo" style="width: auto;height:40px;object-fit:cover" />
+                </div>
+
+                <div class="nav-links" id="navLinks">
+                    <a href="../index.html" >Accueil</a>
+                    <a href="menu.html">Menu</a>
+                    <a href="gallery.html">Galerie</a>
+                    <a href="res.html">Réservation</a>
+                    <a href="#" class="active">Commander</a>
+                </div>
+
+                <div class="cta">
+                    <button class="btn btn-outline navbar-btn"
+                        onclick="document.getElementById('reservation').scrollIntoView({behavior:'smooth'})">Réserver</button>
+                    <button class="menu-toggle" aria-label="Menu" onclick="toggleMobileMenu()">
+                        <i class="ri-menu-line"></i>
+                    </button>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section id="command" class="container">
+            <div class="section-title">
+                <h2>Commandez vos plats</h2>
+            </div>
+            <p>Vous pouvez commander vos plats en ligne, par téléphone au +243859009009, ou directement sur place.</p>
+
+            <div class="command-wrapper">
+                <button class="command-button" id="commandBtn" aria-haspopup="dialog" aria-controls="orderModal">Commencer la commande</button>
+            </div>
+            <div class="modal-backdrop" id="orderModalBackdrop" role="dialog" aria-modal="true" aria-labelledby="modalTitle"
+        tabindex="-1">
+        <div class="modal" role="document" id="orderModal" aria-hidden="true">
+            <div class="modal-header">
+                <div class="modal-title">
+                    <h2 id="modalTitle">Votre commande</h2>
+                    <button class="close-btn" id="closeModal" aria-label="Fermer la fenêtre">✕</button>
+                </div>
+                <div class="toggle" role="tablist" aria-label="Choix Plats Boissons">
+                        <button id="togglePlats" class="active" role="tab" aria-selected="true">Plats</button>
+                        <button id="toggleBoissons" role="tab" aria-selected="false">Boissons</button>
+                    </div>
+            </div>
+
+            <div class="modal-body">
+                <!-- Main items grid -->
+                <div id="itemsArea" class="items-area grid-4" aria-live="polite">
+                    <!-- cards générés par JS -->
+                </div>
+
+                <!-- Selection horizontal -->
+                <div class="selection-bar" id="selectionBar" aria-live="polite">
+                    <!-- items selectionnés générés par JS -->
+                </div>
+            </div>
+
+            <div class="modal-footer">
+                <div class="total">Total : <span id="totalAmount">$0.00</span></div>
+                <div>
+                    <button class="cmd-btn" id="checkoutBtn">Commander</button>
+                </div>
+            </div>
+        </div>
+    </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <div class="container"
+            style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px">
+            <div>
+                <strong>Silicia</strong>
+                <div style="color:var(--muted);font-size:0.95rem">Avenue De La Mission ,No 4260, Gombe, Kinshasa</div>
+            </div>
+            <div style="color:var(--muted);font-size:0.95rem">© Silicia — Tous droits réservés</div>
+            <div style="display:flex;gap:10px;color:var(--muted)"><a href="#menu"
+                    style="text-decoration:none;color:inherit">Menu</a> · <a href="#reservation"
+                    style="text-decoration:none;color:inherit">Réserver</a></div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
+    <script src="../styles/scipt.js"></script>
+    <script>
+        /* ---------- Données d'exemple (à remplacer par ton backend / JSON réel) ---------- */
+        const plats = [
+            { id: 'p1', name: 'Poulet rôti', desc: 'Accompagné de frites', price: 6.5, emoji: '🍗' },
+            { id: 'p2', name: 'Spaghetti bolo', desc: 'Sauce tomate maison', price: 5.0, emoji: '🍝' },
+            { id: 'p3', name: 'Salade César', desc: 'Laitue, poulet, parmesan', price: 4.5, emoji: '🥗' },
+            { id: 'p4', name: 'Burger classique', desc: 'Fromage, salade, sauce', price: 5.5, emoji: '🍔' },
+            { id: 'p5', name: 'Pizza Margherita', desc: 'Tomate, mozzarella', price: 7.0, emoji: '🍕' },
+            { id: 'p6', name: 'Tacos', desc: 'Bœuf épicé', price: 4.8, emoji: '🌮' },
+            { id: 'p7', name: 'Riz cantonais', desc: 'Oeuf, légumes, jambon', price: 4.2, emoji: '🍚' },
+            { id: 'p8', name: 'Poisson grillé', desc: 'Servi avec légumes', price: 8.0, emoji: '🐟' }
+        ];
+
+        const boissons = [
+            { id: 'b1', name: 'Jus de mangue', desc: 'Frais', price: 2.0, emoji: '🥭' },
+            { id: 'b2', name: 'Coca', desc: 'Canette 330ml', price: 1.5, emoji: '🥤' },
+            { id: 'b3', name: 'Eau minérale', desc: '50cl', price: 1.0, emoji: '💧' },
+            { id: 'b4', name: 'Thé glacé', desc: 'Maison', price: 1.8, emoji: '🧋' },
+            { id: 'b5', name: 'Café', desc: 'Express', price: 1.2, emoji: '☕' }
+        ];
+
+        /* ---------- Références DOM ---------- */
+        const commandBtn = document.getElementById('commandBtn');
+        const backdrop = document.getElementById('orderModalBackdrop');
+        const modal = document.getElementById('orderModal');
+        const closeModalBtn = document.getElementById('closeModal');
+        const itemsArea = document.getElementById('itemsArea');
+        const togglePlats = document.getElementById('togglePlats');
+        const toggleBoissons = document.getElementById('toggleBoissons');
+        const selectionBar = document.getElementById('selectionBar');
+        const totalAmount = document.getElementById('totalAmount');
+        const checkoutBtn = document.getElementById('checkoutBtn');
+
+        /* ---------- Etat (sélections) ---------- */
+        /*
+          structure: Map { id -> { item: {...}, qty: number } }
+        */
+        const selection = new Map();
+        let currentView = 'plats'; // 'plats' or 'boissons'
+
+        /* ---------- Fonctions d'affichage ---------- */
+        function formatPrice(n) {
+            return '$' + n.toFixed(2);
+        }
+
+        function renderItems() {
+            // Choix des données
+            const source = currentView === 'plats' ? plats : boissons;
+            itemsArea.innerHTML = '';
+            // Set grid columns class based on viewport
+            const w = window.innerWidth;
+            if (w <= 600) {
+                itemsArea.classList.remove('grid-4'); itemsArea.classList.add('grid-2');
+            } else {
+                itemsArea.classList.remove('grid-2'); itemsArea.classList.add('grid-4');
+            }
+
+            source.forEach(it => {
+                const card = document.createElement('button');
+                card.className = 'card';
+                card.setAttribute('type', 'button');
+                card.innerHTML = `
+      <div class="meta">
+        <div class="name">${it.name}</div>
+        <div class="desc">${it.desc}</div>
+      </div>
+      <div class="price">${formatPrice(it.price)}</div>
+    `;
+                // dataset for price & id
+                card.dataset.id = it.id;
+                card.dataset.price = it.price;
+                card.addEventListener('click', () => addItemToSelection(it));
+                itemsArea.appendChild(card);
+            });
+        }
+
+        function renderSelection() {
+            selectionBar.innerHTML = '';
+            if (selection.size === 0) {
+                const empty = document.createElement('div');
+                empty.style.opacity = 0.6;
+                empty.style.padding = '10px';
+                empty.textContent = 'Aucun article sélectionné';
+                selectionBar.appendChild(empty);
+                return;
+            }
+            selection.forEach((value, key) => {
+                const { item, qty } = value;
+                const div = document.createElement('div');
+                div.className = 'sel-item';
+                div.innerHTML = `
+      <div class="qty" aria-hidden="true">${qty}x</div>
+      <div class="sel-meta">
+        <div class="sel-name">${item.name}</div>
+        <div class="sel-price">${formatPrice(item.price)} / unité</div>
+      </div>
+      <button class="remove" title="Réduire la quantité">−</button>
+    `;
+                const removeBtn = div.querySelector('.remove');
+                removeBtn.addEventListener('click', () => {
+                    decreaseItem(key);
+                });
+                // Allow clicking the whole sel-item to open a small menu or increase qty
+                div.addEventListener('dblclick', () => increaseItem(key));
+                selectionBar.appendChild(div);
+            });
+        }
+
+        /* ---------- Gestion sélection ---------- */
+        function addItemToSelection(it) {
+            if (selection.has(it.id)) {
+                selection.get(it.id).qty += 1;
+            } else {
+                selection.set(it.id, { item: it, qty: 1 });
+            }
+            updateTotal();
+            renderSelection();
+        }
+
+        function increaseItem(id) {
+            if (!selection.has(id)) return;
+            selection.get(id).qty += 1;
+            updateTotal();
+            renderSelection();
+        }
+
+        function decreaseItem(id) {
+            if (!selection.has(id)) return;
+            const entry = selection.get(id);
+            entry.qty -= 1;
+            if (entry.qty <= 0) selection.delete(id);
+            updateTotal();
+            renderSelection();
+        }
+
+        function updateTotal() {
+            let sum = 0;
+            selection.forEach(({ item, qty }) => {
+                sum += item.price * qty;
+            });
+            totalAmount.textContent = formatPrice(sum);
+        }
+
+        /* ---------- Toggle Plats/Boissons ---------- */
+        function setView(view) {
+            currentView = view;
+            // Update button states
+            if (view === 'plats') {
+                togglePlats.classList.add('active'); togglePlats.setAttribute('aria-selected', 'true');
+                toggleBoissons.classList.remove('active'); toggleBoissons.setAttribute('aria-selected', 'false');
+            } else {
+                toggleBoissons.classList.add('active'); toggleBoissons.setAttribute('aria-selected', 'true');
+                togglePlats.classList.remove('active'); togglePlats.setAttribute('aria-selected', 'false');
+            }
+            renderItems();
+        }
+
+        /* ---------- Modal open/close ---------- */
+        function openModal() {
+            backdrop.classList.add('active');
+            modal.setAttribute('aria-hidden', 'false');
+            // focus management (simple)
+            closeModalBtn.focus();
+            renderItems();
+            renderSelection();
+            updateTotal();
+        }
+        function closeModal() {
+            backdrop.classList.remove('active');
+            modal.setAttribute('aria-hidden', 'true');
+            // optionally return focus to opener
+            commandBtn.focus();
+        }
+
+        /* ---------- Listeners ---------- */
+        commandBtn.addEventListener('click', (e) => {
+            openModal();
+        });
+
+        closeModalBtn.addEventListener('click', closeModal);
+
+        // close by clicking on backdrop outside modal
+        backdrop.addEventListener('click', (e) => {
+            if (e.target === backdrop) closeModal();
+        });
+
+        // Keyboard escape
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && backdrop.classList.contains('active')) {
+                closeModal();
+            }
+        });
+
+        // Toggle btns
+        togglePlats.addEventListener('click', () => setView('plats'));
+        toggleBoissons.addEventListener('click', () => setView('boissons'));
+
+        // Checkout click (placeholder)
+        checkoutBtn.addEventListener('click', () => {
+            if (selection.size === 0) {
+                alert('Votre panier est vide.');
+                return;
+            }
+            // Exemple : envoyer sélection au serveur ici (fetch / XHR)
+            // Construisons un récap simplifié
+            let recap = 'Récapitulatif de la commande :\n';
+            selection.forEach(({ item, qty }) => recap += `${qty} × ${item.name} — ${formatPrice(item.price * qty)}\n`);
+            recap += '\nTotal : ' + totalAmount.textContent + '\n\n(Envoi simulé)';
+            alert(recap);
+            // On peut vider la sélection après commande :
+            selection.clear();
+            renderSelection();
+            updateTotal();
+            closeModal();
+        });
+
+        /* Resize listener to adjust grid */
+        window.addEventListener('resize', () => renderItems());
+
+        /* ---------- Initial state ---------- */
+        setView('plats'); // initialise et render
+
+    </script>
+</body>
+
+</html>
